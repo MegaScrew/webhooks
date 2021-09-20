@@ -22,27 +22,28 @@ $arData = [
 			'fields' => [
 				'UF_CONTACT_ID' => $my_invoice->getIdContact(),
 				'UF_COMPANY_ID' => $my_invoice->getIdCompany(),
-                		'UF_MYCOMPANY_ID' => $my_invoice->getIdMyCompany(),
+                'UF_MYCOMPANY_ID' => $my_invoice->getIdMyCompany(),
 				'UF_DEAL_ID' => $my_invoice->getIdDeal(),                        
-                		'ORDER_TOPIC' => $my_invoice->getOrderTopic(),
-		                'STATUS_ID' => 'N',
-		                'PAY_SYSTEM_ID' => 2,
-		                'PERSON_TYPE_ID' => 1,
-		                'DATE_PAY_BEFORE' => $my_invoice->getDatePayBefore(),
-		                'USER_DESCRIPTION' => $my_invoice->getUserDescription(),
-		                'UF_CRM_1631880804' => $my_invoice->getQRcode(),
-		                'PRODUCT_ROWS' => [
-		                	'0' => [
-			                    	'PRODUCT_ID' => 209260,
-			                        'QUANTITY' => $my_invoice->getQuantity(),
-			                        'PRICE' => $my_invoice->getPrice(),
-			                        'MEASURE_CODE' => '166',       
-			                        'MEASURE_NAME' => 'кг',
-			                        'PRODUCT_NAME' => 'Пищевые отходы 5 класса опасности'
-		                    	]
-                		]
-            		]
-        	]
+                'ORDER_TOPIC' => $my_invoice->getOrderTopic(),
+		        'STATUS_ID' => 'N',
+		        'PAY_SYSTEM_ID' => 2,
+		        'PERSON_TYPE_ID' => 1,
+		        'DATE_PAY_BEFORE' => $my_invoice->getDatePayBefore(),
+		        'USER_DESCRIPTION' => $my_invoice->getUserDescription(),
+		        'UF_CRM_1631880804' => $my_invoice->getQRcode(),
+		        'RESPONSIBLE_ID' => $my_invoice->getIdResponsible(),
+		            'PRODUCT_ROWS' => [
+		                '0' => [
+			                'PRODUCT_ID' => 209260,
+			                'QUANTITY' => $my_invoice->getQuantity(),
+			                'PRICE' => $my_invoice->getPrice(),
+			                'MEASURE_CODE' => '166',       
+			                'MEASURE_NAME' => 'кг',
+			                'PRODUCT_NAME' => 'Пищевые отходы 5 класса опасности'
+		                ]
+                	]
+            ]
+        ]
 	]
 ];
 
