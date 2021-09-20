@@ -144,9 +144,9 @@ class invoice{
 			$this->rq_acc_num = $result['get_my_company_requisite_bankdetail']['0']['RQ_ACC_NUM'];
 			$this->rq_cor_acc_num = $result['get_my_company_requisite_bankdetail']['0']['RQ_COR_ACC_NUM'];
 			$this->qrcode = getQRCode($this->getIdCompany(), $this->getRqCompanyName(), $this->getRqAccNum(), $this->getRqBankName(), $this->getRqBik(), $this->getRqCorAccNum(), $this->getRqInn(), $this->getInner(), $this->getOuter(), $this->getTitle(), $this->getCity(), $this->getSum());
-			echo '<pre>';
-				print_r($result);
-			echo '</pre>';
+			// echo '<pre>';
+			// 	print_r($result);
+			// echo '</pre>';
 		}
 	}
 
@@ -156,6 +156,38 @@ class invoice{
 
 	public function getIdCompany(){
 		return $this->id_company;
+	}
+
+	public function getIdContact(){
+		return $this->id_contact;
+	}
+
+	public function getIdMyCompany(){
+		return $this->id_mycompany;
+	}
+
+	public function getIdDeal(){
+		return $this->id_deal;
+	}
+
+	public function getOrderTopic(){
+		return $this->order_topic;
+	}
+
+	public function getDatePayBefore(){
+		return $this->date_pay_before;
+	}
+
+	public function getUserDescription(){
+		return $this->user_description;
+	}
+
+	public function getQuantity(){
+		return $this->quantity;
+	}
+
+	public function getPrice(){
+		return $this->price;
 	}
 
 	public function getRqCompanyName(){
