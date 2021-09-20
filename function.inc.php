@@ -61,6 +61,7 @@ class invoice{
 	private $id_deal;
 	private $id_company;
 	private $id_contact;
+	private $id_responsible;
 	private $id_mycompany;
 	private $id_requisite;
 	private $id_bankdetail;
@@ -88,7 +89,7 @@ class invoice{
 		$arData = [
 			'find_deal' => [
 				'method' => 'crm.deal.get',
-				'params' => [ 'ID' => $id, 'select' => ['ID', 'COMPANY_ID', 'CONTACT_ID', 'UF_CRM_1631861994']]
+				'params' => [ 'ID' => $id, 'select' => ['ID', 'COMPANY_ID', 'CONTACT_ID', 'ASSIGNED_BY_ID', 'UF_CRM_1631861994']]
 			],
 			'get_company' => [
 				'method' => 'crm.company.get',
@@ -122,6 +123,7 @@ class invoice{
 			$this->id_deal = $id;
 			$this->id_company = $result['find_deal']['COMPANY_ID'];
 			$this->id_contact = $result['find_deal']['CONTACT_ID'];
+			$this->id_responsible = $result['find_deal']['ASSIGNED_BY_ID'];
 			$this->id_mycompany = $result['find_deal']['UF_CRM_1631861994'];
 			$this->id_requisite = $result['get_my_company_requisite']['0']['ID'];
 			$this->id_bankdetail = $result['get_my_company_requisite_bankdetail']['0']['ID'];
@@ -232,6 +234,10 @@ class invoice{
 
 	public function getSum(){
 		return $this->sum;
+	}
+
+	public function getIdResponsible(){
+		return $this->id_responsible;
 	}
 }
 
